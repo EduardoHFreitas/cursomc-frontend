@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, MenuController, NavController } from 'ionic-angular';
+import { IonicApp, IonicPage, MenuController, NavController } from 'ionic-angular';
 import { CredenciaisDTO } from '../../models/credentiais.dto';
 import { AuthService } from '../../services/auth.service';
 
@@ -11,8 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class HomePage {
 
   credential: CredenciaisDTO = {
-    email: "",
-    senha: ""
+    email: "admin@gmail.com",
+    senha: "admin"
   }
 
   constructor(
