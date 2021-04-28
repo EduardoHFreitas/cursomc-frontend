@@ -20,4 +20,13 @@ export class ClienteService {
 
         return this.http.get(url, {responseType: 'blob'});
     }
+
+    insert(cliente: any) {
+        return this.http.post(`${API_CONFIG.baseUrl}/clientes`, cliente,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
+    }
 }
