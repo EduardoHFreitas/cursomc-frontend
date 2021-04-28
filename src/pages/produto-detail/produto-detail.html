@@ -9,7 +9,7 @@
     <img [src]="produto?.imageUrl || 'assets/imgs/prod.jpg'">
     <ion-card-content>
       <ion-card-title>{{produto?.nome}}</ion-card-title>
-      <p text-center>{{produto?.preco | currency}}</p>
+      <p>{{produto?.preco | currency}}</p>
     </ion-card-content>
   </ion-card>
   <button ion-button block outline>Adicionar ao carrinho</button>
