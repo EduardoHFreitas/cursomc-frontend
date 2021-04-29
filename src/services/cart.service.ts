@@ -32,6 +32,8 @@ export class CartService {
 
         if (cartProduto == -1) {
             cart.items.push({quantidade: 1, produto: produto})
+        } else {
+            cart = this.increaseQuantity(produto);
         }
 
         this.storage.setCart(cart);
@@ -74,6 +76,10 @@ export class CartService {
 
         if (position != -1) {
             cart.items[position].quantidade--;
+
+            if (cart.items[position].quantidade < 1) {
+                cart = this.removeProduto(produto);
+            }
         }
 
         this.storage.setCart(cart);
