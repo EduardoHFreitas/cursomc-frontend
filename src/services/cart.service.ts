@@ -86,7 +86,7 @@ export class CartService {
         let sum = 0;
 
         for (var i=0; i < cart.items.length; i++) {
-            sum += cart.items[i].produto.preco * cart.cart.items[i].quantidade;
+            sum += cart.items[i].produto.preco * cart.items[i].quantidade;
         }
 
         return sum;
