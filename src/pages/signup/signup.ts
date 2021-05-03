@@ -71,6 +71,7 @@ export class SignupPage {
       telefones : [this.formGroup.value.telefone1, this.formGroup.value.telefone2, this.formGroup.value.telefone3],
       enderecos : [
         {
+          id: null,
           logradouro : this.formGroup.value.logradouro,
           numero : this.formGroup.value.numero,
           complemento : this.formGroup.value.complemento,

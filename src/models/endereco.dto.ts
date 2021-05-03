@@ -8,5 +8,5 @@ export interface EnderecoDTO {
     bairro : string;
     cep : string;
     cidadeId : string;
-    cidade: CidadeDTO;
+    cidade?: CidadeDTO;
 }

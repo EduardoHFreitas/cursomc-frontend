@@ -11,8 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class HomePage {
 
   credential: CredenciaisDTO = {
-    email: "admin@gmail.com",
-    senha: "admin"
+    email: "duh.henrike@gmail.com",
+    senha: "123"
   }
 
   constructor(
