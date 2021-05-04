@@ -60,4 +60,11 @@ export class ProdutosPage {
 
     return loader;
   }
+
+  doRefresh(event) {
+    this.ionViewDidLoad();
+    setTimeout(() => {
+      event.complete();
+    }, 1000);
+  }
 }
