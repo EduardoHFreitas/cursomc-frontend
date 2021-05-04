@@ -4,7 +4,7 @@ import { JwtHelper } from "angular2-jwt";
 import { API_CONFIG } from "../config/api.config";
 import { CredenciaisDTO } from "../models/credentiais.dto";
 import { LocalUser } from "../models/local-user";
-import { CartService } from "./cart.service";
+import { CartService } from "./domain/cart.service";
 import { StorageService } from "./storage.service";
 
 @Injectable()
