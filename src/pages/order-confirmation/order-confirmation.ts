@@ -1,4 +1,3 @@
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CartItem } from '../../models/cart-item';
@@ -20,6 +19,7 @@ export class OrderConfirmationPage {
   cartItems: CartItem[];
   cliente: ClienteDTO;
   endereco: EnderecoDTO;
+  codigoPedido: string;
 
   constructor(
     public navCtrl: NavController,
@@ -48,8 +48,8 @@ export class OrderConfirmationPage {
   checkout() {
     this.pedidoService.insert(this.pedido)
       .subscribe(response => {
-        console.log(response.headers.get('location'));
         this.cartService.createOrClearCart();
+        this.codigoPedido = this.getIdPedido(response.headers.get('location'));
       }, error => {
         if (error.status == 403) {
           this.navCtrl.setRoot('HomePage');
@@ -61,6 +61,10 @@ export class OrderConfirmationPage {
     this.navCtrl.setRoot('CartPage');
   }
 
+  home() {
+    this.navCtrl.setRoot('CategoriasPage');
+  }
+
   getTotal() {
     return this.cartService.getTotal();
   }
@@ -69,4 +73,10 @@ export class OrderConfirmationPage {
     let position = enderecos.findIndex(x => x.id == id);
     return enderecos[position];
   }
+
+  private getIdPedido(location: string) : string {
+    let position = location.lastIndexOf('/');
+    return location.substring(position + 1, location.length);
+  }
 }
+ 
