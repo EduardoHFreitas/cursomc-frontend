@@ -3,7 +3,7 @@
     <name>Sistema de pedidos</name>
     <description>Sistema de pedidos desenvolvido no curso de Spring Boot e Ionic</description>
     <author email="duh.henrike@gmail.com" href="https://www.linkedin.com/in/eduardo-henrique-de-freitas-81530a142/">LinkedIn</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.17:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
